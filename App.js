@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
 
 export default function App() {
   return (
@@ -8,7 +8,9 @@ export default function App() {
         style={{
           backgroundColor: "white",
           width: 350,
+          height: "100%",
           flex:1,
+          position: 'absolute'
       }}
       />
       <View
@@ -19,33 +21,51 @@ export default function App() {
           position:'absolute'
         }}
       />
+      
             <Text style={styles.titulo}>SlimFit</Text>
       <Image source={require('./assets/logo.jpg')} style={styles.logo}/>
+      
       <TextInput
         style={{
-          top:-350,
-          width:250,
+          top:400,
+          width:300,
           alignSelf:"center",
+          textAlign:"center",
+          position:'absolute',
+          borderWidth: 3,
+          height:50,
+          fontWeight:"bold",
+          borderColor: '#DA4343'
          }}
         placeholder="Username"
+        placeholderTextColor="#DA4343"
         keyboardType="default"
       />
       <TextInput
         secureTextEntry={true}
         style={{
-          top:-300,
-          width:250,
+          top:500,
+          width:300,
+          textAlign:"center",
+          position:'absolute',
+          borderWidth: 3,
+          height:50,
+          fontWeight:"bold",
+          borderColor:"#DA4343"
          }}
         placeholder="Password"
+        placeholderTextColor="#DA4343"
         keyboardType="default"
       />
       <TouchableHighlight>
         <View style={{
             alignItems:"center",
             backgroundColor:"#43B6DA",
-            top: -130,
+            top: 750,
             height: 50,
-            width: 300
+            alignSelf:"center",
+            position:'absolute',
+            width: 300,
         }}>
           <Text style={{
             fontSize:16,
@@ -58,7 +78,9 @@ export default function App() {
         <View style={{
             alignItems:"center",
             backgroundColor:"#43B6DA",
-            top: -100,
+            top: 670,
+            position:'absolute',
+            alignSelf:"center",
             height: 50,
             width: 300
         }}>
@@ -71,6 +93,7 @@ export default function App() {
       </TouchableHighlight>
       <StatusBar style="auto" />
     </View>
+    
   );
 }
 
