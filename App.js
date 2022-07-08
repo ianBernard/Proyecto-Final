@@ -1,7 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, onPress,  } from 'react-native';
+import Home from './Screens/Home';
+import Navigator from './Routes/HomeStack';
+ 
+export default function App({ navigation }) {
+  
+  const pressHandler = () => {
+    navigation.navigate('Home');
+  }
 
-export default function App() {
   return (
     <View style={styles.container}>
       <View 
@@ -21,9 +28,8 @@ export default function App() {
           position:'absolute'
         }}
       />
-      
             <Text style={styles.titulo}>SlimFit</Text>
-      <Image source={require('./assets/logo.jpg')} style={styles.logo}/>
+      <Image source={require('./assets/App/logo.jpg')} style={styles.logo}/>
       
       <TextInput
         style={{
@@ -57,46 +63,32 @@ export default function App() {
         placeholderTextColor="#DA4343"
         keyboardType="default"
       />
-      <TouchableHighlight>
-        <View style={{
-            alignItems:"center",
-            backgroundColor:"#43B6DA",
-            top: 750,
-            height: 50,
-            alignSelf:"center",
-            position:'absolute',
-            width: 300,
-        }}>
-          <Text style={{
+      <TouchableOpacity
+        style={styles.button1}
+        onPress={pressHandler}
+      > 
+        <Text style={{
             fontSize:16,
             color:"white",
             top:"25%"
           }}>Iniciar Sesion</Text>
-        </View>
-      </TouchableHighlight>
-      <TouchableHighlight>
-        <View style={{
-            alignItems:"center",
-            backgroundColor:"#43B6DA",
-            top: 670,
-            position:'absolute',
-            alignSelf:"center",
-            height: 50,
-            width: 300
-        }}>
-          <Text style={{
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button2}
+        onPress={onPress}
+      >
+        <Text style={{
             fontSize:16,
             color:"white",
             top:"25%"
           }}>Registrarse</Text>
-        </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
-    
   );
 }
 
+//Styles
 
 const styles = StyleSheet.create({
   titulo: {
@@ -121,4 +113,22 @@ const styles = StyleSheet.create({
     left:70,
     resizeMode: 'contain'
  },
+ button1: {
+  alignItems: "center",
+  backgroundColor: "#43B6DA",
+  position:'absolute',
+  height: 50,
+  width: 300,
+  top:750,
+  alignSelf: 'center',
+},
+button2: {
+  alignItems: "center",
+  backgroundColor: "#43B6DA",
+  position:'absolute',
+  height: 50,
+  width: 300,
+  top: 670,
+  alignSelf: 'center',
+},
 });
