@@ -11,7 +11,19 @@ async function getUsuarios()
         console.log(err)
     }
 }
-getUsuarios()
+
+async function postUsuarios()
+{
+    try{
+        let pool = await sql.connect(cnx)
+        let postUsuarios = await pool.request().execute("Select * from Usuarios")
+
+    } catch(err){
+        console.log(err)
+    }
+}
+
+
 module.exports = {
     getUsuarios: getUsuarios
 }

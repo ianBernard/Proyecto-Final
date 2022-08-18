@@ -10,5 +10,5 @@ const cnx = {
     }
 }
 
-
 module.exports = cnx
+export default cnx()
