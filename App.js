@@ -158,9 +158,10 @@ export default function App() {
         </View>
       </View>
     </View>
-    )
+   )
+       return current === 'Inicio' ? InicioPag : current;
+
   }
-  return current === 'Inicio' ? InicioPag : current;
 
 //Styles
 
