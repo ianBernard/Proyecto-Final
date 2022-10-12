@@ -1,5 +1,6 @@
 @api=http://localhost:4000/usuarios
 @api2=http://localhost:4000/recetas
+@api3=http://localhost:4000/rutinas
 GET {{api}}
 ###
 POST {{api}}
@@ -34,3 +35,5 @@ GET {{api2}}/1
 ###
 
 DELETE {{api2}}/1
+###
+GET {{api3}}
